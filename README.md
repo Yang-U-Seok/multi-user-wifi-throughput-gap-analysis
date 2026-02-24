@@ -57,6 +57,6 @@ $$
 
 여기서 **G**는 처리량 차이, T(ideal)는 이상적인 다중 사용자 처리량, T(measured)는 실제 측정된 처리량을 의미한다.
 
-** Theoretical Experiment
+## Theoretical Experiment
 
-![theorical.png]
+![outputs](theorical.png)
