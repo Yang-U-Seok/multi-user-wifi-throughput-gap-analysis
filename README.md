@@ -72,23 +72,15 @@ $$
 T_{\text{ideal,phy}} = \frac{R_{\text{phy}}}{N}
 $$
 
-- **Case 1 (N = 1)**  
+Case 1 (N = 1)
 
-  $$
-  T_{\text{ideal}} = \frac{135}{1} = 135 \text{ Mbps}
-  $$
+$T_{\text{ideal}} = \frac{135}{1} = 135\ \text{Mbps}$
 
+Case 2 (N = 2)
 
-- **Case 2 (N = 2)**  
+$T_{\text{ideal}} = \frac{135}{2} = 67.5\ \text{Mbps}$
 
-  $$
-  T_{\text{ideal}} = \frac{135}{2} = 67.5 \text{ Mbps}
-  $$
+Case 3 (N = 3)
 
-
-- **Case 3 (N = 3)**  
-
-  $$
-  T_{\text{ideal}} = \frac{135}{3} = 45 \text{ Mbps}
-  $$
+$T_{\text{ideal}} = \frac{135}{3} = 45\ \text{Mbps}$
 
