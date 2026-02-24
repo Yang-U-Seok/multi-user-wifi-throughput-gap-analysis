@@ -27,7 +27,7 @@ $$
 - 이상적인 다중 사용자 환경에서 한 사용자가 이론적으로 달성 가능한 최대 전송률은 다음과 같이 정의된다.
 
 $$
-T_{\text{ideal}} = \frac{C}{N}
+T_{\text{ideal,shannon}} = \frac{C}{N}
 $$
 
 여기서 T(ideal)는 이상적인 다중 사용자 처리량, **C**는 채널 용량(Channel Capacity), **N**은 사용자수(Users)
@@ -52,7 +52,7 @@ $$
 - 이상적 처리량과 실제 측정 처리량 간의 성능 격차는 다음과 같이 정의된다.
 
 $$
-G=T_{\text{ideal}}-T_{\text{measured}}
+G=T_{\text{ideal,phy}}-T_{\text{measured}}
 $$
 
 여기서 **G**는 처리량 차이, T(ideal)는 이상적인 다중 사용자 처리량, T(measured)는 실제 측정된 처리량을 의미한다.
@@ -69,25 +69,25 @@ $$
 본 연구에서는 수신 링크 속도(135 Mbps)를 실험 비교를 위한 실용적 이론 상한으로 사용한다.
 
 $$
-T_{\text{ideal}} = \frac{R_{\text{phy}}}{N}
+T_{\text{ideal,phy}} = \frac{R_{\text{phy}}}{N}
 $$
 
 ### Case 1 (N = 1)
 
 $$
-T_{\text{ideal}} = \frac{135}{1} = 135\ \text{Mbps}
+T_{\text{ideal.phy}} = \frac{135}{1} = 135\ \text{Mbps}
 $$
 
 ### Case 2 (N = 2)
 
 $$
-T_{\text{ideal}} = \frac{135}{2} = 67.5\ \text{Mbps}
+T_{\text{ideal,phy}} = \frac{135}{2} = 67.5\ \text{Mbps}
 $$
 
 ### Case 3 (N = 3)
 
 $$
-T_{\text{ideal}} = \frac{135}{3} = 45\ \text{Mbps}
+T_{\text{ideal.phy}} = \frac{135}{3} = 45\ \text{Mbps}
 $$
 
 - 사용자 수가 증가할수록 이상적 1인당 처리량은 N에 반비례하여 감소한다.
