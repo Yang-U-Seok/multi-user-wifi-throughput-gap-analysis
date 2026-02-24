@@ -69,7 +69,7 @@ $$
 본 연구에서는 수신 링크 속도(135 Mbps)를 실험 비교를 위한 실용적 이론 상한으로 사용한다.
 
 $$
-T_{\text{ideal,phy}} = \frac{R_{\text{phy}}}{N}
+T_{\text{ideal}} = \frac{R_{\text{phy}}}{N}
 $$
 
 ### Case 1 (N = 1)
