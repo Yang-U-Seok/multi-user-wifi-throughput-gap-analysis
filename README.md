@@ -115,7 +115,9 @@ $$
 G=135-57.03=77.97
 $$
 
-효율=T_{\text{measured}}/T_{\text{ideal,phy}}= 0.422
+$$
+\eta = \frac{T_{\text{measured}}}{T_{\text{ideal,phy}}} = 0.422
+$$
 
 - N=2
 
@@ -123,7 +125,9 @@ $$
 G=67.5-25.59=41.91
 $$
 
-효율=T_{\text{measured}}/T_{\text{ideal,phy}}=0.379
+$$
+\eta = \frac{T_{\text{measured}}}{T_{\text{ideal,phy}}} = 0.379
+$$
 
 - N=3
 
@@ -131,7 +135,9 @@ $$
 G=45-16.33=28.67
 $$
 
-효율=T_{\text{measured}}/T_{\text{ideal,phy}}=0.363
+$$
+\eta = \frac{T_{\text{measured}}}{T_{\text{ideal,phy}}} = 0.363
+$$
 
 
 
