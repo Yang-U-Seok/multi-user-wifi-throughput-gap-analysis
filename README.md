@@ -109,6 +109,7 @@ $$
 
 ## Gap Experiment
 
+\eta = 효율
 - N=1
 
 $$
@@ -139,7 +140,7 @@ $$
 \eta = \frac{T_{\text{measured}}}{T_{\text{ideal,phy}}} = 0.363
 $$
 
-
+\
 
 
 
