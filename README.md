@@ -60,6 +60,6 @@ $$
 ## Theoretical Experiment
 - 이상적 처리량은 다음과 같다.
 
-![theorical](outputs\theorical.png)
+![theorical](outputs/theorical.png)
 
 
