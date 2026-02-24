@@ -99,12 +99,12 @@ $$
 
 ### N = 2
 
-![measured_case1](outputs/measured_case2.png)
+![measured_case2](outputs/measured_case2.png)
 
 
 ### N = 3
 
-![measured_case1](outputs/measured_case3.png)
+![measured_case3](outputs/measured_case3.png)
 
 
 ---
