@@ -15,7 +15,9 @@
 
 ## Theoretical Model
 - 이상적인 무선 채널 환경에서 달성 가능한 최대 전송률은 Shannon capacity로 표현된다.
-- `C = B log2(1 + SNR)`
+$$
+C = B log2(1 + SNR)
+$$
 - C는 Channel Capacity
 - B는 BandWidth
 - SNR은 signal-to-noise ratio(S/N)
