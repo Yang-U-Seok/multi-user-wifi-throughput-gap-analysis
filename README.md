@@ -14,8 +14,8 @@
 - 성능 격차를 줄이기 위한 가능한 개선 방안을 검토하고 개선 전략 적용 전후의 처리량을 비교하여 성능 격차 감소 여부를 검증한다.
 
 ## Theoretical Model
-- 이상적인 무선 채널 환경에서 달성 가능한 최대 전송률은 Shannon capacity로 표현된다.
-    $C = B \log_2(1 + SNR)$
+- 이상적인 무선 채널 환경에서 달성 가능한 최대 전송률은 Shannon capacity로 표현된다./n
+   $C = B \log_2(1 + SNR)$
 - C는 Channel Capacity
 - B는 BandWidth
 - SNR은 signal-to-noise ratio(S/N)
