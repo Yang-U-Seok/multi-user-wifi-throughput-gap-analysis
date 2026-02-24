@@ -8,7 +8,7 @@
   
 ## Overview
 - 단일 사용자 환경과 다중 사용자 환경에서의 Wi-Fi 처리량을 비교 분석한다.
-- Shannon capacity 및 MAC 계층 효율 모델을 기반으로 이론적 처리량을 계산한다.
+- Shannon capacity 및 PHY link rate를 기반으로 이론적 상한을 정의한다.
 - 실제 패킷 캡처 데이터를 활용하여 측정 처리량을 산출하고, 이론값과의 차이를 정량적으로 평가한다.
 - 채널 경쟁, 프로토콜 오버헤드, 재전송 등의 요인이 처리량 감소에 미치는 영향을 분석한다.
 - 성능 격차를 줄이기 위한 가능한 개선 방안을 검토하고 개선 전략 적용 전후의 처리량을 비교하여 성능 격차 감소 여부를 검증한다.
@@ -30,7 +30,7 @@ $$
 T_{\text{ideal,shannon}} = \frac{C}{N}
 $$
 
-여기서 T(ideal)는 이상적인 다중 사용자 처리량, **C**는 채널 용량(Channel Capacity), **N**은 사용자수(Users)
+여기서 T_{\text{ideal,shannon}}는 이상적인 다중 사용자 처리량, **C**는 채널 용량(Channel Capacity), **N**은 사용자수(Users)
 
 이 값은 채널 용량을 사용자 수를 나눈 값으로써 한 사용자가 사용할 수 있는 이상적인 처리량의 값을 의미한다.
 
@@ -55,7 +55,7 @@ $$
 G=T_{\text{ideal,phy}}-T_{\text{measured}}
 $$
 
-여기서 **G**는 처리량 차이, T(ideal)는 이상적인 다중 사용자 처리량, T(measured)는 실제 측정된 처리량을 의미한다.
+여기서 **G**는 처리량 차이, T_{ideal,phy}는 PHY 기반 이상적 처리량, T_{measured}는 실제 측정된 처리량을 의미한다.
 
 ## Theoretical Experiment
 - 이상적 처리량은 다음과 같다.
@@ -75,7 +75,7 @@ $$
 ### Case 1 (N = 1)
 
 $$
-T_{\text{ideal.phy}} = \frac{135}{1} = 135\ \text{Mbps}
+T_{\text{ideal,phy}} = \frac{135}{1} = 135\ \text{Mbps}
 $$
 
 ### Case 2 (N = 2)
@@ -87,7 +87,7 @@ $$
 ### Case 3 (N = 3)
 
 $$
-T_{\text{ideal.phy}} = \frac{135}{3} = 45\ \text{Mbps}
+T_{\text{ideal,phy}} = \frac{135}{3} = 45\ \text{Mbps}
 $$
 
 - 사용자 수가 증가할수록 이상적 1인당 처리량은 N에 반비례하여 감소한다.
