@@ -42,3 +42,8 @@ T_{\text{measured}}=\frac{\sum(\text{frame.len}\times 8)}{\Delta t}
 $$
 
 여기서 $\Delta t$ 는 측정 구간(초), `frame.len`은 각 프레임의 전체 길이(Byte)이며 MAC 헤더 및 상위 계층 헤더를 포함한다.
+
+## Measurement Pipeline
+- Wireshark/tshark로 트래픽을 캡처하여 PCAP로 저장한다.
+- Python으로 PCAP를 파싱해 `frame.len` 합과 측정 구간 $\Delta t$를 계산한다.
+- 구간별 처리량을 산출하고 통계/시각화를 수행한다.
