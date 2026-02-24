@@ -75,19 +75,19 @@ $$
 ### Case 1 (N = 1)
 
 $$
-T_{\text{ideal,phy}} = \frac{135}{1} = 135\ \text{Mbps}
+T_{\text{ideal}} = \frac{135}{1} = 135\ \text{Mbps}
 $$
 
 ### Case 2 (N = 2)
 
 $$
-T_{\text{ideal,phy}} = \frac{135}{2} = 67.5\ \text{Mbps}
+T_{\text{ideal}} = \frac{135}{2} = 67.5\ \text{Mbps}
 $$
 
 ### Case 3 (N = 3)
 
 $$
-T_{\text{ideal,phy}} = \frac{135}{3} = 45\ \text{Mbps}
+T_{\text{ideal}} = \frac{135}{3} = 45\ \text{Mbps}
 $$
 
 - 사용자 수가 증가할수록 이상적 1인당 처리량은 N에 반비례하여 감소한다.
