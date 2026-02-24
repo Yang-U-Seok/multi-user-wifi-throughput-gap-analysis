@@ -97,9 +97,7 @@ $$
 
 ### Measured Throughput (N=1, Speedtest)
 
-- Captured duration: 30.01 s  
-- Total bytes (Σ frame.len): 213,947,410 B  
-- Measured throughput: **57.03 Mbps**
+![measured_case1](measured_case1.png)
 
 
 
