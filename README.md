@@ -99,5 +99,9 @@ $$
 
 ![measured_case1](outputs/measured_case1.png)
 
+### Measured Throughput (N=2, Speedtest)
+
+
+
 
 
