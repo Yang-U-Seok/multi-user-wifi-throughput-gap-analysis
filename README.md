@@ -30,7 +30,7 @@ $$
 T_{\text{ideal,shannon}} = \frac{C}{N}
 $$
 
-여기서 T_{\text{ideal,shannon}}는 이상적인 다중 사용자 처리량, **C**는 채널 용량(Channel Capacity), **N**은 사용자수(Users)
+여기서 T(ideal,shannon)는 이상적인 다중 사용자 처리량, **C**는 채널 용량(Channel Capacity), **N**은 사용자수(Users)
 
 이 값은 채널 용량을 사용자 수를 나눈 값으로써 한 사용자가 사용할 수 있는 이상적인 처리량의 값을 의미한다.
 
@@ -55,7 +55,7 @@ $$
 G=T_{\text{ideal,phy}}-T_{\text{measured}}
 $$
 
-여기서 **G**는 처리량 차이, T_{ideal,phy}는 PHY 기반 이상적 처리량, T_{measured}는 실제 측정된 처리량을 의미한다.
+여기서 **G**는 이론 상한과 실제 측정 처리량간의 성능 격차, T(ideal,phy)는 PHY 기반 이상적 처리량, T(measured)는 실제 측정된 처리량을 의미한다.
 
 ## Theoretical Experiment
 - 이상적 처리량은 다음과 같다.
@@ -92,3 +92,7 @@ $$
 
 - 사용자 수가 증가할수록 이상적 1인당 처리량은 N에 반비례하여 감소한다.
 - 본 값은 PHY 계층의 최대 전송 속도를 기반으로 한 상한이며, MAC 오버헤드, 재전송, 채널 경쟁 등은 고려하지 않는다.
+
+## Measured Experiment
+
+
