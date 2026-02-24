@@ -30,7 +30,7 @@ $$
 T_{\text{ideal}} = \frac{C}{N}
 $$
 
-여기서 **T(ideal)**는 이상적인 다중 사용자 처리량, **C**는 채널 용량(Channel Capacity), **N**은 사용자수(Users)
+여기서 T(ideal)는 이상적인 다중 사용자 처리량, **C**는 채널 용량(Channel Capacity), **N**은 사용자수(Users)
 
 이 값은 채널 용량을 사용자 수를 나눈 값으로써 한 사용자가 사용할 수 있는 이상적인 처리량의 값을 의미한다.
 
@@ -41,7 +41,7 @@ $$
 T_{\text{measured}}=\frac{\sum(\text{frame.len}\times 8)}{\Delta t}
 $$
 
-여기서 **T(measured)**는 실제 측정된 처리량, $\Delta t$ 는 측정 구간(초), `frame.len`은 각 프레임의 전체 길이(Byte)이며 MAC 헤더 및 상위 계층 헤더를 포함한다.
+여기서 T(measured)는 실제 측정된 처리량, $\Delta t$ 는 측정 구간(초), `frame.len`은 각 프레임의 전체 길이(Byte)이며 MAC 헤더 및 상위 계층 헤더를 포함한다.
 
 ## Measurement Pipeline
 - Wireshark/tshark로 트래픽을 캡처하여 PCAP로 저장한다.
@@ -55,4 +55,4 @@ $$
 G=T_{\text{ideal}}-T_{\text{measured}}
 $$
 
-여기서 **G**는 처리량 차이, **T(ideal)**는 이상적인 다중 사용자 처리량, **T(measured)**는 실제 측정된 처리량을 의미한다.
+여기서 **G**는 처리량 차이, T(ideal)는 이상적인 다중 사용자 처리량, T(measured)는 실제 측정된 처리량을 의미한다.
