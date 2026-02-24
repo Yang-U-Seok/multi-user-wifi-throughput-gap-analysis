@@ -62,4 +62,28 @@ $$
 
 ![theorical](outputs/theorical.png)
 
+- Receive link rate: 135 Mbps  
+- Transmit link rate: 300 Mbps  
+- Band: 2.4 GHz (802.11n)
+
+본 연구에서는 수신 링크 속도(135 Mbps)를 실험 비교를 위한 실용적 이론 상한으로 사용한다.
+
+$$
+T_{\text{ideal,phy}} = \frac{R_{\text{phy}}}{N}
+$$
+
+- **Case 1 (N = 1)**  
+  $$
+  T_{\text{ideal}} = \frac{135}{1} = 135 \text{ Mbps}
+  $$
+
+- **Case 2 (N = 2)**  
+  $$
+  T_{\text{ideal}} = \frac{135}{2} = 67.5 \text{ Mbps}
+  $$
+
+- **Case 3 (N = 3)**  
+  $$
+  T_{\text{ideal}} = \frac{135}{3} = 45 \text{ Mbps}
+  $$
 
