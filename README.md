@@ -34,3 +34,11 @@ $$
 
 이 값은 채널 용량을 사용자 수를 나눈 값으로써 한 사용자가 사용할 수 있는 이상적인 처리량의 값을 의미한다.
 
+## Measurement Model
+- 실제 처리량은 PCAP 기반 패킷 캡처 데이터에서 측정 구간 $\Delta t$ 동안 관측된 프레임 길이의 합을 이용해 계산한다.
+
+$$
+T_{\text{measured}}=\frac{\sum(\text{frame.len}\times 8)}{\Delta t}
+$$
+
+여기서 $\Delta t$ 는 측정 구간(초), `frame.len`은 각 프레임의 전체 길이(Byte)이며 MAC 헤더 및 상위 계층 헤더를 포함한다.
