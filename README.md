@@ -66,9 +66,7 @@ $$
 
 ## Theoretical Experiment (PHY 기반 상한)
 
-- Receive link rate: 135 Mbps  
-- Transmit link rate: 300 Mbps  
-- Band: 2.4 GHz (802.11n)
+![theoretical](outputs/theoretical.png)
 
 본 연구에서는 수신 링크 속도(135 Mbps)를 실험 비교를 위한 실용적 이론 상한으로 사용한다.
 
@@ -96,13 +94,18 @@ $$
 ## Measured Experiment (Speedtest 기반)
 
 ### N = 1
-Measured Throughput: **57.03 Mbps**
+
+![measured_case1](outputs/measured_case1.png)
 
 ### N = 2
-Measured Throughput: **25.59 Mbps**
+
+![measured_case1](outputs/measured_case2.png)
+
 
 ### N = 3
-Measured Throughput: **16.33 Mbps**
+
+![measured_case1](outputs/measured_case3.png)
+
 
 ---
 
