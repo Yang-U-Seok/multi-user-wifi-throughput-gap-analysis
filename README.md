@@ -59,4 +59,4 @@ $$
 
 ## Theoretical Experiment
 
-![outputs](theorical.png)
+
