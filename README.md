@@ -103,5 +103,12 @@ $$
 
 ![measured_case2](outputs/measured_case2.png)
 
+### Measured Throughput (N=3, Speedtest)
+
+![measured_case3](outputs/measured_case3.png)
+
+
+
+
 
 
