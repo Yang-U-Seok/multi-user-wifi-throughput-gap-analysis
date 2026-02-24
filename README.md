@@ -60,7 +60,7 @@ $$
 ## Theoretical Experiment
 - 이상적 처리량은 다음과 같다.
 
-![theorical](outputs/theorical.png)
+![theoretical](outputs/theoretical.png)
 
 - Receive link rate: 135 Mbps  
 - Transmit link rate: 300 Mbps  
