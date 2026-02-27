@@ -1,10 +1,19 @@
 # multi-user-wifi-throughput-gap-analysis
-- 다중 사용자 환경에서 Wi-Fi의 이론적 처리량과 실제 측정 처리량 간의 성능 격차를 정량적으로 분석하고, 그 원인을 이론적 모델과 실험 데이터를 기반으로 규명한다.
+다중 사용자 환경에서 Wi-Fi의 이론적 처리량과 실제 측정 처리량 간의 성능 격차를 계층적으로 분석한다.
+
+본 연구는 Shannon 상한, PHY 기반 상한, MAC 시뮬레이션, 실제 측정 결과를 단계적으로 비교하여 Wi-Fi 처리량 감소의 구조적 원인을 규명하는 것을 목표로 한다.
 
 ## Motivation
-- 실제로 한 Wi-Fi에는 여러 사용자가 접속하여 인터넷에 연결하는 경우가 많으며 한 기기만 연결하는 일은 드물다.
-- 그러나 여러 기기를 연결할수록 사용자가 체감하는 처리량은 감소하며 한 기기만을 사용했을 때와의 성능 차이가 발생한다.
-- 본 프로젝트는 이론적 처리량과 실제로 측정된 처리량 간의 성능 격차를 통신 계층 관점에서 분석하고 그 원인을 규명하는 것을 목표로 한다.
+- 실제 Wi-Fi 환경에서는 다수의 사용자가 동시에 접속한다.
+- 사용자 수가 증가할수록 체감 처리량은 감소한다.
+- 그러나 이 감소가 어느 계층에서 발생하는지 명확히 분리되지 않는다.
+
+본 프로젝트는 다음과 같은 계층적 비교를 수행한다:
+
+Shannon Capacity → PHY Upper Bound → MAC Simulation → Measurement
+
+이를 통해 Wi-Fi 성능 저하의 구조적 원인을 단계적으로 분석한다.
+
   
 ## Overview
 - 단일 사용자 환경과 다중 사용자 환경에서의 Wi-Fi 처리량을 비교 분석한다.
@@ -34,6 +43,8 @@ $$
 
 이는 정보이론적 상한을 사용자 수로 나눈 값으로, 현실적인 무선 환경에서는 직접적으로 달성되기 어렵다.
 
+Shannon capacity는 정보이론적 상한이며, 실제 Wi-Fi 시스템에서는 변조 및 프로토콜 제약으로 인해 해당 값에 직접 도달할 수 없다. 따라서 본 연구에서는 실험 환경에서 관측된 PHY link rate를 실용적 비교 상한으로 사용한다.
+
 ---
 
 ## Measurement Model
@@ -45,6 +56,18 @@ T_{\text{measured}}=\frac{\sum(\text{frame.len}\times 8)}{\Delta t}
 $$
 
 여기서 `frame.len`은 MAC 및 상위 계층 헤더를 포함한 전체 프레임 길이를 의미한다.
+
+---
+
+## Simulation Model (DCF + Aggregation 기반)
+
+본 연구에서는 실제 Wi-Fi 동작을 근사하기 위해  
+DCF 기반 매체 접근 방식과 A-MPDU aggregation을 반영한 시뮬레이션을 수행하였다.
+
+- PHY rate: 150 Mbps
+- Aggregation factor: k = 8
+- Hidden node 및 채널 에러는 고려하지 않음
+- STA uplink ACK는 트리거 기반 모델 사용
 
 ---
 
@@ -76,17 +99,17 @@ $$
 
 ### Case 1 (N = 1)
 $$
-T_{\text{ideal,phy}} = 135 \text{ Mbps}
+T_{\text{ideal,phy}} = 150 \text{ Mbps}
 $$
 
 ### Case 2 (N = 2)
 $$
-T_{\text{ideal,phy}} = 67.5 \text{ Mbps}
+T_{\text{ideal,phy}} = 75 \text{ Mbps}
 $$
 
 ### Case 3 (N = 3)
 $$
-T_{\text{ideal,phy}} = 45 \text{ Mbps}
+T_{\text{ideal,phy}} = 50 \text{ Mbps}
 $$
 
 ---
@@ -107,37 +130,69 @@ $$
 ![measured_case3](outputs/measured_case3.png)
 
 
----
-
-## Gap Experiment
-
-### N = 1
-$$
-G = 135 - 57.03 = 77.97
-$$
-$$
-\eta = 0.422
-$$
-
-### N = 2
-$$
-G = 67.5 - 25.59 = 41.91
-$$
-$$
-\eta = 0.379
-$$
-
-### N = 3
-$$
-G = 45 - 16.33 = 28.67
-$$
-$$
-\eta = 0.363
-$$
+| N | Measured (Mbps) | Efficiency (η) |
+|---|------------------|----------------|
+| 1 | 57.03 | 0.38 |
+| 2 | 25.59 | 0.34 |
+| 3 | 16.33 | 0.32 |
 
 ---
 
-## 왜 이론값과 실제값은 차이가 발생하는가?
+## Simulation Result
+
+![simulation](outputs/simulation_output.png)
+
+| N | Simulation (Mbps) | Efficiency (η) |
+|---|--------------------|----------------|
+| 1 | 84 | 0.56 |
+| 2 | 34 | 0.45 |
+| 3 | 19 | 0.38 |
+
+시뮬레이션 결과는 Shannon 기반 이론 상한과 실제 측정값 사이의 중간 수준을 보이며,  
+MAC 계층 경쟁과 프로토콜 오버헤드 효과를 반영함을 확인할 수 있다.
+
+- N=1일 때 84Mb, N=2일 때 34Mb, N=3일 때 19Mb의 차이가 발생하는 것을 확인할 수 있다.
+
+---
+
+
+## Gap Analysis
+
+
+### Theoretical → Simulation 
+
+| N | Gap (Mbps) |
+|---|------------|
+| 1 | 66 |
+| 2 | 41 |
+| 3 | 31 |
+
+원인:
+- CSMA/CA 경쟁
+- Backoff
+- MAC/ACK 오버헤드
+- Half-duplex 특성
+
+
+---
+
+### Simulation → Measurement 
+
+| N | Gap (Mbps) |
+|---|------------|
+| 1 | 26.97 |
+| 2 | 8.41 |
+| 3 | 2.67 |
+
+원인:
+- TCP 혼잡 제어
+- 실제 채널 간섭
+- 드라이버 정책
+- Background traffic
+
+---
+
+## 처리량 저하의 구조적 원인
 
 이론적 상한과 실제 처리량 사이의 격차는 Wi-Fi의 구조적 특성에 의해 발생한다.
 
@@ -159,8 +214,15 @@ Speedtest는 TCP 기반이므로 Slow Start, Congestion Window 조절 등의 영
 ---
 
 ## Conclusion
+본 연구는 다중 사용자 환경에서 Wi-Fi 처리량 감소가 단순한 사용자 수 증가의 결과가 아니라,
 
-실험 결과, 실제 처리량은 PHY 기반 이론 상한 대비 약 36~42% 수준으로 측정되었다.  
-또한 사용자 수가 증가함에 따라 효율은 0.422 → 0.363으로 감소하였다.
+1. MAC 계층 경쟁 구조  
+2. 프로토콜 오버헤드  
+3. Half-duplex 특성  
+4. TCP 혼잡 제어  
 
-이는 Wi-Fi의 CSMA/CA 기반 매체 접근 방식과 프로토콜 오버헤드가 다중 사용자 환경에서 구조적인 성능 저하를 유발함을 정량적으로 보여준다.
+에 의해 단계적으로 발생함을 정량적으로 확인하였다.
+
+Shannon → PHY → Simulation → Measurement의 계층적 비교를 통해 Wi-Fi 성능 격차를 구조적으로 분해할 수 있음을 보였다.
+
+실험 결과, 실제 처리량은 PHY 기반 이론 상한 대비 약 32%~38% 수준으로 나타났으며, 사용자 수 증가에 따라 효율이 점진적으로 감소하는 경향을 확인하였다.
